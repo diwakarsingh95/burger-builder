@@ -45,7 +45,7 @@ class ContactData extends Component {
         validation: {
           required: true,
           minLength: 5,
-          maxLength: 5
+          maxLength: 6
         },
         valid: false,
         touched: false
@@ -174,8 +174,8 @@ class ContactData extends Component {
           return (
             <Input
               key={formElement.id}
-              elementType={formElement.config.elementType}
-              elementConfig={formElement.config.elementConfig}
+              elementtype={formElement.config.elementType}
+              elementconfig={formElement.config.elementConfig}
               value={formElement.config.value}
               invalid={!formElement.config.valid}
               shouldValidate={formElement.config.validation}
@@ -186,7 +186,7 @@ class ContactData extends Component {
             />
           );
         })}
-        <Button btnType="Success" disabled={this.state.formIsValid}>
+        <Button btnType="Success" disabled={!this.state.formIsValid}>
           ORDER
         </Button>
       </form>
