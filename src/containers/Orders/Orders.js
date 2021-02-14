@@ -6,7 +6,6 @@ import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -20,10 +19,8 @@ const Orders = () => {
           });
         }
         setOrders(fetchedOrders);
-        setLoading(false);
       })
       .catch(err => {
-        setLoading(false);
       });
   });
 
